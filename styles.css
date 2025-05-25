@@ -1,0 +1,70 @@
+/* Navigation styles */
+.nav-link,
+.mobile-nav-link {
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.nav-link::after,
+.mobile-nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background-color: #4f46e5; /* indigo-600 */
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after,
+.mobile-nav-link:hover::after {
+    width: 100%;
+}
+
+/* Mobile menu animations */
+#nav-menu {
+    visibility: hidden;
+    pointer-events: none;
+    transition: all 0.3s ease-in-out;
+}
+
+#nav-menu.show-menu {
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/* Mobile menu items animation */
+.mobile-nav-link {
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all 0.3s ease-in-out;
+}
+
+#nav-menu.show-menu .mobile-nav-link {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Stagger mobile menu items animation */
+#nav-menu.show-menu .mobile-nav-link:nth-child(1) { transition-delay: 0.1s; }
+#nav-menu.show-menu .mobile-nav-link:nth-child(2) { transition-delay: 0.2s; }
+#nav-menu.show-menu .mobile-nav-link:nth-child(3) { transition-delay: 0.3s; }
+#nav-menu.show-menu .mobile-nav-link:nth-child(4) { transition-delay: 0.4s; }
+
+/* Hero section styles */
+.hero-background {
+    background-image: url('../assets/images/tigerback.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Ensure content stays above the background */
+section > div:not(.hero-background) {
+    z-index: 2;
+}
+
+/* Rest of existing styles */ 
