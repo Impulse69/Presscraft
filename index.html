@@ -12,45 +12,68 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
 
+  <!-- Load main JavaScript -->
+  <script src="./main.js" type="module" defer></script>
+
   <!-- Custom tweaks -->
   <link rel="stylesheet" href="styles.css" />
 </head>
-<body class="font-inter text-slate-800 antialiased">
+<body class="font-inter text-slate-800 dark:text-white dark:bg-slate-800 antialiased transition-colors duration-200">
 
   <!-- ========== NAVBAR ========== -->
-  <header class="w-full bg-white/80 backdrop-blur sticky top-0 z-30">
+  <header class="w-full bg-white/80 dark:bg-slate-800/80 backdrop-blur sticky top-0 z-30">
     <nav class="mx-auto max-w-7xl px-6 py-4 flex items-center justify-between">
       <a href="#" class="flex items-center gap-2 text-xl font-bold tracking-tight">
         <img src="assets/images/mini logo.png" alt="logo" class="w-8 h-8 -rotate-10">
-        Presscraft<span class="text-indigo-600">& Logistics</span>
+        Presscraft<span class="text-indigo-600 dark:text-indigo-400">& Logistics</span>
       </a>
 
       <!-- Desktop menu -->
       <div class="hidden md:flex items-center gap-8">
         <ul class="flex gap-8 text-sm font-semibold">
-          <li><a href="#services" id="nav-services" class="nav-link hover:text-indigo-600">Services</a></li>
-          <li><a href="#portfolio" id="nav-portfolio" class="nav-link hover:text-indigo-600">Portfolio</a></li>
-          <li><a href="#testimonials" id="nav-testimonials" class="nav-link hover:text-indigo-600">Testimonials</a></li>
-          <li><a href="#contact" id="nav-contact" class="nav-link hover:text-indigo-600">Contact</a></li>
+          <li><a href="#services" id="nav-services" class="nav-link hover:text-indigo-600 dark:hover:text-indigo-400">Services</a></li>
+          <li><a href="#portfolio" id="nav-portfolio" class="nav-link hover:text-indigo-600 dark:hover:text-indigo-400">Portfolio</a></li>
+          <li><a href="#testimonials" id="nav-testimonials" class="nav-link hover:text-indigo-600 dark:hover:text-indigo-400">Testimonials</a></li>
+          <li><a href="#contact" id="nav-contact" class="nav-link hover:text-indigo-600 dark:hover:text-indigo-400">Contact</a></li>
         </ul>
+        <!-- Dark mode toggle -->
+        <button type="button" id="theme-toggle" class="p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors" aria-label="Toggle dark mode">
+          <svg id="theme-toggle-dark-icon" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+          </svg>
+          <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"></path>
+          </svg>
+        </button>
       </div>
 
       <!-- Mobile menu button -->
-      <button id="nav-toggle" class="md:hidden flex flex-col gap-[3px]" aria-label="Toggle menu">
-        <span class="w-6 h-[2px] bg-slate-900"></span>
-        <span class="w-6 h-[2px] bg-slate-900"></span>
-        <span class="w-6 h-[2px] bg-slate-900"></span>
-      </button>
+      <div class="flex items-center gap-4 md:hidden">
+        <!-- Dark mode toggle for mobile -->
+        <button type="button" id="theme-toggle-mobile" class="p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors" aria-label="Toggle dark mode">
+          <svg id="theme-toggle-dark-icon-mobile" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+          </svg>
+          <svg id="theme-toggle-light-icon-mobile" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"></path>
+          </svg>
+        </button>
+        <button id="nav-toggle" class="flex flex-col gap-[3px]" aria-label="Toggle menu">
+          <span class="w-6 h-[2px] bg-slate-900 dark:bg-white"></span>
+          <span class="w-6 h-[2px] bg-slate-900 dark:bg-white"></span>
+          <span class="w-6 h-[2px] bg-slate-900 dark:bg-white"></span>
+        </button>
+      </div>
     </nav>
 
     <!-- Mobile menu -->
-    <div id="nav-menu" class="absolute top-full left-0 w-full bg-white shadow-lg transform -translate-y-full opacity-0 transition-all duration-300 ease-in-out">
+    <div id="nav-menu" class="absolute top-full left-0 w-full bg-white dark:bg-slate-800 shadow-lg transform -translate-y-full opacity-0 transition-all duration-300 ease-in-out">
       <div class="px-6 py-4">
         <ul class="flex flex-col gap-4 text-sm font-semibold">
-          <li><a href="#services" id="mobile-nav-services" class="mobile-nav-link block py-2 hover:text-indigo-600">Services</a></li>
-          <li><a href="#portfolio" id="mobile-nav-portfolio" class="mobile-nav-link block py-2 hover:text-indigo-600">Portfolio</a></li>
-          <li><a href="#testimonials" id="mobile-nav-testimonials" class="mobile-nav-link block py-2 hover:text-indigo-600">Testimonials</a></li>
-          <li><a href="#contact" id="mobile-nav-contact" class="mobile-nav-link block py-2 hover:text-indigo-600">Contact</a></li>
+          <li><a href="#services" id="mobile-nav-services" class="mobile-nav-link block py-2 hover:text-indigo-600 dark:hover:text-indigo-400">Services</a></li>
+          <li><a href="#portfolio" id="mobile-nav-portfolio" class="mobile-nav-link block py-2 hover:text-indigo-600 dark:hover:text-indigo-400">Portfolio</a></li>
+          <li><a href="#testimonials" id="mobile-nav-testimonials" class="mobile-nav-link block py-2 hover:text-indigo-600 dark:hover:text-indigo-400">Testimonials</a></li>
+          <li><a href="#contact" id="mobile-nav-contact" class="mobile-nav-link block py-2 hover:text-indigo-600 dark:hover:text-indigo-400">Contact</a></li>
         </ul>
       </div>
     </div>
@@ -77,27 +100,27 @@
   </section>
 
   <!-- ========== SERVICES ========== -->
-  <section id="services" class="py-16 sm:py-24 bg-gradient-to-br from-blue-50 to-white">
+  <section id="services" class="py-16 sm:py-24 bg-gradient-to-br from-blue-50 to-white dark:from-slate-900 dark:to-slate-800">
     <div class="max-w-7xl mx-auto px-4 sm:px-6">
-      <h2 class="text-3xl sm:text-4xl font-bold mb-10 text-slate-900">Our Printing Services</h2>
+      <h2 class="text-3xl sm:text-4xl font-bold mb-10 text-slate-900 dark:text-white text-center">Our Printing Services</h2>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
         <!-- Service Cards -->
         <div class="space-y-6">
-          <div class="bg-blue-100 rounded-lg p-6 border border-blue-200">
-            <h3 class="font-bold text-lg mb-1">Digital Printing</h3>
-            <p class="text-slate-700">High-quality, short-run prints with quick turnaround times, perfect for customized projects and small batches.</p>
+          <div class="bg-blue-100 dark:bg-slate-700 rounded-lg p-6 border border-blue-200 dark:border-slate-600">
+            <h3 class="font-bold text-lg mb-1 dark:text-white">Digital Printing</h3>
+            <p class="text-slate-700 dark:text-slate-200">High-quality, short-run prints with quick turnaround times, perfect for customized projects and small batches.</p>
           </div>
-          <div class="bg-blue-100 rounded-lg p-6 border border-blue-200">
-            <h3 class="font-bold text-lg mb-1">Offset Printing</h3>
-            <p class="text-slate-700">Cost-effective solution for large volumes, ensuring precise color accuracy and consistent quality throughout.</p>
+          <div class="bg-blue-100 dark:bg-slate-700 rounded-lg p-6 border border-blue-200 dark:border-slate-600">
+            <h3 class="font-bold text-lg mb-1 dark:text-white">Offset Printing</h3>
+            <p class="text-slate-700 dark:text-slate-200">Cost-effective solution for large volumes, ensuring precise color accuracy and consistent quality throughout.</p>
           </div>
-          <div class="bg-blue-100 rounded-lg p-6 border border-blue-200">
-            <h3 class="font-bold text-lg mb-1">Large Format Printing</h3>
-            <p class="text-slate-700">Banners, posters, and signage up to 64" wide, suitable for indoor and outdoor use with durable materials.</p>
+          <div class="bg-blue-100 dark:bg-slate-700 rounded-lg p-6 border border-blue-200 dark:border-slate-600">
+            <h3 class="font-bold text-lg mb-1 dark:text-white">Large Format Printing</h3>
+            <p class="text-slate-700 dark:text-slate-200">Banners, posters, and signage up to 64" wide, suitable for indoor and outdoor use with durable materials.</p>
           </div>
-          <div class="bg-blue-100 rounded-lg p-6 border border-blue-200">
-            <h3 class="font-bold text-lg mb-1">Specialty Printing</h3>
-            <p class="text-slate-700">Custom paper stocks, foil stamping, embossing, and other premium finishes for standout designs.</p>
+          <div class="bg-blue-100 dark:bg-slate-700 rounded-lg p-6 border border-blue-200 dark:border-slate-600">
+            <h3 class="font-bold text-lg mb-1 dark:text-white">Specialty Printing</h3>
+            <p class="text-slate-700 dark:text-slate-200">Custom paper stocks, foil stamping, embossing, and other premium finishes for standout designs.</p>
           </div>
         </div>
         <!-- Slideshow -->
@@ -110,8 +133,32 @@
     </div>
   </section>
 
+<!---ABOUT CEO SECTION----->
+  <section class="py-16 sm:py-24 bg-gradient-to-br from-blue-50 to-white dark:from-slate-900 dark:to-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-10 text-slate-900 dark:text-white text-center">About Our CEO</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="bg-white dark:bg-slate-700 rounded-lg p-6 shadow-lg border border-blue-100 dark:border-slate-600">
+          <img src="assets/images/eric1.jpg" alt="CEO John Smith" class="w-full h-48 object-cover rounded-lg mb-4">
+          <h3 class="text-xl font-bold mb-2 text-slate-900 dark:text-white">Mr. Eric</h3>
+          <p class="text-slate-700 dark:text-slate-200">Over 20 years in the printing industry, leading innovation and quality.</p>
+        </div>
+        <div class="bg-white dark:bg-slate-700 rounded-lg p-6 shadow-lg border border-blue-100 dark:border-slate-600">
+          <img src="assets/images/portfolio-img2.jpg" alt="CEO receiving award" class="w-full h-48 object-cover rounded-lg mb-4">
+          <h3 class="text-xl font-bold mb-2 text-slate-900 dark:text-white">Industry Excellence Award</h3>
+          <p class="text-slate-700 dark:text-slate-200">Recognized for outstanding leadership and contributions to printing technology.</p>
+        </div>
+        <div class="bg-white dark:bg-slate-700 rounded-lg p-6 shadow-lg border border-blue-100 dark:border-slate-600">
+          <img src="assets/images/teamwork.jpg" alt="CEO with team" class="w-full h-48 object-cover rounded-lg mb-4">
+          <h3 class="text-xl font-bold mb-2 text-slate-900 dark:text-white">Team Leadership</h3>
+          <p class="text-slate-700 dark:text-slate-200">Fostered a culture of quality and customer focus at PressCraft and Logistics.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ========== PORTFOLIO ========== -->
-  <section id="portfolio" class="py-16 sm:py-24">
+  <section id="portfolio" class="py-16 sm:py-24 dark:bg-slate-900">
     <div class="max-w-7xl mx-auto px-4 sm:px-6">
       <h2 class="text-2xl sm:text-3xl font-bold text-center mb-10 sm:mb-14">Recent Work</h2>
       <div class="grid gap-4 sm:gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
@@ -126,7 +173,7 @@
   </section>
 
   <!-- ========== TESTIMONIALS ========== -->
-  <section id="testimonials" class="bg-indigo-600 py-16 sm:py-24 text-white">
+  <section id="testimonials" class="bg-indigo-600 dark:bg-indigo-900 py-16 sm:py-24 text-white">
     <div class="max-w-3xl mx-auto px-4 sm:px-6 text-center">
       <h2 class="text-2xl sm:text-3xl font-bold mb-8 sm:mb-12">What Clients Say</h2>
 
@@ -151,16 +198,16 @@
   </section>
 
   <!-- ========== CONTACT ========== -->
-  <section id="contact" class="py-16 sm:py-24 bg-slate-50">
+  <section id="contact" class="py-16 sm:py-24 bg-slate-50 dark:bg-slate-900">
     <div class="max-w-5xl mx-auto px-4 sm:px-6 grid lg:grid-cols-2 gap-8 sm:gap-12">
       <div>
-        <h2 class="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6">Get in Touch</h2>
-        <p class="mb-6 text-slate-600">
+        <h2 class="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6 dark:text-white">Get in Touch</h2>
+        <p class="mb-6 text-slate-600 dark:text-slate-300">
           Have a custom project or a question? Reach out and our team will respond within one business day.
         </p>
-        <ul class="space-y-4 text-slate-700">
-          <li><strong>Phone:</strong> <a href="tel:+1234567890" class="hover:text-indigo-600">+1 234 567 890</a></li>
-          <li><strong>Email:</strong> <a href="mailto:hello@printco.com" class="hover:text-indigo-600">hello@printco.com</a></li>
+        <ul class="space-y-4 text-slate-700 dark:text-slate-300">
+          <li><strong>Phone:</strong> <a href="tel:+1234567890" class="hover:text-indigo-600 dark:hover:text-indigo-400">+1 234 567 890</a></li>
+          <li><strong>Email:</strong> <a href="mailto:hello@printco.com" class="hover:text-indigo-600 dark:hover:text-indigo-400">hello@printco.com</a></li>
           <li><strong>Address:</strong> 123 Print Street, Suite 100, City, Country</li>
         </ul>
 
@@ -173,19 +220,19 @@
         </div>
       </div>
 
-      <!-- simple contact form (static, no back‑end) -->
+      <!-- Contact form -->
       <form class="space-y-4 sm:space-y-6">
         <div>
-          <label class="block text-sm font-medium mb-1">Name</label>
-          <input type="text" class="w-full rounded border-slate-300 focus:ring-indigo-500" />
+          <label class="block text-sm font-medium mb-1 dark:text-white">Name</label>
+          <input type="text" class="w-full rounded border-slate-300 dark:border-slate-600 dark:bg-slate-700 dark:text-white focus:ring-indigo-500" />
         </div>
         <div>
-          <label class="block text-sm font-medium mb-1">Email</label>
-          <input type="email" class="w-full rounded border-slate-300 focus:ring-indigo-500" />
+          <label class="block text-sm font-medium mb-1 dark:text-white">Email</label>
+          <input type="email" class="w-full rounded border-slate-300 dark:border-slate-600 dark:bg-slate-700 dark:text-white focus:ring-indigo-500" />
         </div>
         <div>
-          <label class="block text-sm font-medium mb-1">Message</label>
-          <textarea rows="4" class="w-full rounded border-slate-300 focus:ring-indigo-500"></textarea>
+          <label class="block text-sm font-medium mb-1 dark:text-white">Message</label>
+          <textarea rows="4" class="w-full rounded border-slate-300 dark:border-slate-600 dark:bg-slate-700 dark:text-white focus:ring-indigo-500"></textarea>
         </div>
         <button type="submit" class="w-full sm:w-auto rounded-md bg-indigo-600 px-6 py-3 text-white font-semibold shadow hover:bg-indigo-700">
           Send Message
@@ -204,7 +251,5 @@
       </div>
     </div>
   </footer>
-
-  <script src="./main.js"></script>
 </body>
 </html>
