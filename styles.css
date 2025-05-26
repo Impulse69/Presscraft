@@ -56,7 +56,7 @@
 
 /* Hero section styles */
 .hero-background {
-    background-image: url('../assets/images/tigerback.jpg');
+    background-image: url('assets/images/tigerback.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
