@@ -1,7 +1,8 @@
 // Import modular scripts
-import { initializeTheme, setupThemeToggle } from '/scripts/theme.js';
-import { setupNavigation } from '/scripts/navigation.js';
-import { setupServicesSlideshow } from '/scripts/services-slideshow.js';
+import { initializeTheme, setupThemeToggle } from './scripts/theme.js';
+import { setupNavigation } from './scripts/navigation.js';
+import { setupServicesSlideshow } from './scripts/services-slideshow.js';
+import { setupTestimonialsSlideshow } from './scripts/slideshow.js';
 
 // Initialize all functionality when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
@@ -12,9 +13,13 @@ document.addEventListener('DOMContentLoaded', () => {
   // Setup navigation
   setupNavigation();
 
-  // Setup services slideshow
+  // Setup slideshows
   setupServicesSlideshow();
+  setupTestimonialsSlideshow();
 
   // Update copyright year
-  document.getElementById('year').textContent = new Date().getFullYear();
+  const yearElement = document.getElementById('year');
+  if (yearElement) {
+    yearElement.textContent = new Date().getFullYear();
+  }
 });

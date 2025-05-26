@@ -3,12 +3,12 @@ export function setupServicesSlideshow() {
   const slideshowImages = [
     'assets/images/slideshow/logo.png',
     'assets/images/slideshow/invitations.jpg',
-    'assets/images/slideshow/car livery.jpg',
-    'assets/images/slideshow/shirt.jpg',
+    'assets/images/slideshow/t-shirt 2.jpg',
     'assets/images/slideshow/brochure.jpg',
     'assets/images/slideshow/printing.jpg',
     'assets/images/slideshow/key fobs.jpg',
     'assets/images/slideshow/wepik-export.png',
+    'assets/images/slideshow/mugs.jpg',
   ];
 
   let slideshowIndex = 0;
