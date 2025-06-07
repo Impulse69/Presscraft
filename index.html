@@ -1,260 +1,551 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Printing Press – High‑Quality Services</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Printing Press – High‑Quality Services</title>
 
-  <!-- Tailwind CDN – development only -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script src="./scripts/tailwind-config.js"></script>
+    <!-- Tailwind CDN – development only -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./scripts/tailwind-config.js"></script>
 
-  <!-- Fonts / Icons -->
-  <link rel="preconnect" href="https://fonts.gstatic.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+    <!-- Fonts / Icons -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
 
-  <!-- Load JavaScript -->
-  <script src="./scripts/theme.js" type="module"></script>
-  <script src="./scripts/navigation.js" type="module"></script>
-  <script src="./scripts/services-slideshow.js" type="module"></script>
-  <script src="./scripts/slideshow.js" type="module"></script>
-  <script src="./main.js" type="module"></script>
+    <!-- Load JavaScript -->
+    <script src="./scripts/theme.js" type="module"></script>
+    <script src="./scripts/navigation.js" type="module"></script>
+    <script src="./scripts/services-slideshow.js" type="module"></script>
+    <script src="./scripts/slideshow.js" type="module"></script>
+    <script src="./main.js" type="module"></script>
 
-  <!-- Custom tweaks -->
-  <link rel="stylesheet" href="styles.css" />
-</head>
-<body class="font-inter text-slate-800 dark:text-white dark:bg-slate-800 antialiased transition-colors duration-200">
+    <!-- Custom tweaks -->
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body
+    class="font-inter text-slate-800 dark:text-white dark:bg-slate-800 antialiased transition-colors duration-200"
+  >
+    <!-- ========== NAVBAR ========== -->
+    <header
+      class="w-full bg-white/80 dark:bg-slate-800/80 backdrop-blur sticky top-0 z-30"
+    >
+      <nav
+        class="mx-auto max-w-7xl px-6 py-4 flex items-center justify-between"
+      >
+        <a
+          href="#"
+          class="flex items-center gap-2 text-xl font-bold tracking-tight"
+        >
+          <img
+            src="assets/images/mini logo.png"
+            alt="logo"
+            class="w-8 h-8 -rotate-10"
+          />
+          Presscraft<span class="text-indigo-600 dark:text-indigo-400"
+            >& Logistics</span
+          >
+        </a>
 
-  <!-- ========== NAVBAR ========== -->
-  <header class="w-full bg-white/80 dark:bg-slate-800/80 backdrop-blur sticky top-0 z-30">
-    <nav class="mx-auto max-w-7xl px-6 py-4 flex items-center justify-between">
-      <a href="#" class="flex items-center gap-2 text-xl font-bold tracking-tight">
-        <img src="assets/images/mini logo.png" alt="logo" class="w-8 h-8 -rotate-10">
-        Presscraft<span class="text-indigo-600 dark:text-indigo-400">& Logistics</span>
-      </a>
-
-      <!-- Desktop menu -->
-      <div class="hidden md:flex items-center gap-8">
-        <ul class="flex gap-8 text-sm font-semibold">
-          <li><a href="#services" id="nav-services" class="nav-link hover:text-indigo-600 dark:hover:text-indigo-400">Services</a></li>
-          <li><a href="#portfolio" id="nav-portfolio" class="nav-link hover:text-indigo-600 dark:hover:text-indigo-400">Portfolio</a></li>
-          <li><a href="#testimonials" id="nav-testimonials" class="nav-link hover:text-indigo-600 dark:hover:text-indigo-400">Testimonials</a></li>
-          <li><a href="#contact" id="nav-contact" class="nav-link hover:text-indigo-600 dark:hover:text-indigo-400">Contact</a></li>
-        </ul>
-        <!-- Dark mode toggle -->
-        <button type="button" id="theme-toggle" class="p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors" aria-label="Toggle dark mode">
-          <svg id="theme-toggle-dark-icon" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-            <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
-          </svg>
-          <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-            <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"></path>
-          </svg>
-        </button>
-      </div>
-
-      <!-- Mobile menu button -->
-      <div class="flex items-center gap-4 md:hidden">
-        <!-- Dark mode toggle for mobile -->
-        <button type="button" id="theme-toggle-mobile" class="p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors" aria-label="Toggle dark mode">
-          <svg id="theme-toggle-dark-icon-mobile" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-            <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
-          </svg>
-          <svg id="theme-toggle-light-icon-mobile" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-            <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"></path>
-          </svg>
-        </button>
-        <button id="nav-toggle" class="flex flex-col gap-[3px]" aria-label="Toggle menu">
-          <span class="w-6 h-[2px] bg-slate-900 dark:bg-white"></span>
-          <span class="w-6 h-[2px] bg-slate-900 dark:bg-white"></span>
-          <span class="w-6 h-[2px] bg-slate-900 dark:bg-white"></span>
-        </button>
-      </div>
-    </nav>
-
-    <!-- Mobile menu -->
-    <div id="nav-menu" class="absolute top-full left-0 w-full bg-white dark:bg-slate-800 shadow-lg transform -translate-y-full opacity-0 transition-all duration-300 ease-in-out">
-      <div class="px-6 py-4">
-        <ul class="flex flex-col gap-4 text-sm font-semibold">
-          <li><a href="#services" id="mobile-nav-services" class="mobile-nav-link block py-2 hover:text-indigo-600 dark:hover:text-indigo-400">Services</a></li>
-          <li><a href="#portfolio" id="mobile-nav-portfolio" class="mobile-nav-link block py-2 hover:text-indigo-600 dark:hover:text-indigo-400">Portfolio</a></li>
-          <li><a href="#testimonials" id="mobile-nav-testimonials" class="mobile-nav-link block py-2 hover:text-indigo-600 dark:hover:text-indigo-400">Testimonials</a></li>
-          <li><a href="#contact" id="mobile-nav-contact" class="mobile-nav-link block py-2 hover:text-indigo-600 dark:hover:text-indigo-400">Contact</a></li>
-        </ul>
-      </div>
-    </div>
-  </header>
-
-  <!-- ========== HERO ========== -->
-  <section class="relative isolate">
-    <div class="hero-background absolute inset-0"></div>
-    <div class="absolute inset-0 bg-gradient-to-l from-white/90 via-white/50 md:via-transparent"></div>
-    <div class="relative mx-auto max-w-7xl grid md:grid-cols-2">
-      <!-- copy -->
-      <div class="px-6 py-16 sm:py-24 md:py-32">
-        <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight">
-          <span class="block text-white">High‑Quality</span>
-          <span class="block text-indigo-600">Printing Services</span>
-        </h1>
-        <p class="mt-4 sm:mt-6 text-base sm:text-lg text-white max-w-md">
-          Bringing your ideas to life with precision and quality—on paper, fabric, and beyond.
-        </p>
-      </div>
-      <!-- Spacer div to maintain grid layout -->
-      <div class="h-64 sm:h-72 md:h-auto"></div>
-    </div>
-  </section>
-
-  <!-- ========== SERVICES ========== -->
-  <section id="services" class="py-16 sm:py-24 bg-gradient-to-br from-blue-50 to-white dark:from-slate-900 dark:to-slate-800">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6">
-      <h2 class="text-3xl sm:text-4xl font-bold mb-10 text-slate-900 dark:text-white text-center">Our Printing Services</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-        <!-- Service Cards -->
-        <div class="space-y-6">
-          <div class="bg-blue-100 dark:bg-slate-700 rounded-lg p-6 border border-blue-200 dark:border-slate-600">
-            <h3 class="font-bold text-lg mb-1 dark:text-white">Digital Printing</h3>
-            <p class="text-slate-700 dark:text-slate-200">High-quality, short-run prints with quick turnaround times, perfect for customized projects and small batches.</p>
-          </div>
-          <div class="bg-blue-100 dark:bg-slate-700 rounded-lg p-6 border border-blue-200 dark:border-slate-600">
-            <h3 class="font-bold text-lg mb-1 dark:text-white">Offset Printing</h3>
-            <p class="text-slate-700 dark:text-slate-200">Cost-effective solution for large volumes, ensuring precise color accuracy and consistent quality throughout.</p>
-          </div>
-          <div class="bg-blue-100 dark:bg-slate-700 rounded-lg p-6 border border-blue-200 dark:border-slate-600">
-            <h3 class="font-bold text-lg mb-1 dark:text-white">Large Format Printing</h3>
-            <p class="text-slate-700 dark:text-slate-200">Banners, posters, and signage up to 64" wide, suitable for indoor and outdoor use with durable materials.</p>
-          </div>
-          <div class="bg-blue-100 dark:bg-slate-700 rounded-lg p-6 border border-blue-200 dark:border-slate-600">
-            <h3 class="font-bold text-lg mb-1 dark:text-white">Specialty Printing</h3>
-            <p class="text-slate-700 dark:text-slate-200">Custom paper stocks, foil stamping, embossing, and other premium finishes for standout designs.</p>
-          </div>
+        <!-- Desktop menu -->
+        <div class="hidden md:flex items-center gap-8">
+          <ul class="flex gap-8 text-sm font-semibold">
+            <li>
+              <a
+                href="#services"
+                id="nav-services"
+                class="nav-link hover:text-indigo-600 dark:hover:text-indigo-400"
+                >Services</a
+              >
+            </li>
+            <li>
+              <a
+                href="#portfolio"
+                id="nav-portfolio"
+                class="nav-link hover:text-indigo-600 dark:hover:text-indigo-400"
+                >Portfolio</a
+              >
+            </li>
+            <li>
+              <a
+                href="#testimonials"
+                id="nav-testimonials"
+                class="nav-link hover:text-indigo-600 dark:hover:text-indigo-400"
+                >Testimonials</a
+              >
+            </li>
+            <li>
+              <a
+                href="#contact"
+                id="nav-contact"
+                class="nav-link hover:text-indigo-600 dark:hover:text-indigo-400"
+                >Contact</a
+              >
+            </li>
+          </ul>
+          <!-- Dark mode toggle -->
+          <button
+            type="button"
+            id="theme-toggle"
+            class="p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors"
+            aria-label="Toggle dark mode"
+          >
+            <svg
+              id="theme-toggle-dark-icon"
+              class="w-5 h-5"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+            >
+              <path
+                d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"
+              ></path>
+            </svg>
+            <svg
+              id="theme-toggle-light-icon"
+              class="hidden w-5 h-5"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+            >
+              <path
+                d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+              ></path>
+            </svg>
+          </button>
         </div>
-        <!-- Slideshow -->
-        <div class="w-full flex justify-center">
-          <div class="rounded-lg overflow-hidden shadow-lg w-full h-[500px] md:h-[600px] max-w-xl bg-slate-200 flex items-center justify-center">
-            <img id="services-slideshow" src="assets/images/slideshow/Logo2.png" alt="Printing Service" class="object-cover w-full h-full transition-opacity duration-700" />
-          </div>
+
+        <!-- Mobile menu button -->
+        <div class="flex items-center gap-4 md:hidden">
+          <!-- Dark mode toggle for mobile -->
+          <button
+            type="button"
+            id="theme-toggle-mobile"
+            class="p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors"
+            aria-label="Toggle dark mode"
+          >
+            <svg
+              id="theme-toggle-dark-icon-mobile"
+              class="w-5 h-5"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+            >
+              <path
+                d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"
+              ></path>
+            </svg>
+            <svg
+              id="theme-toggle-light-icon-mobile"
+              class="hidden w-5 h-5"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+            >
+              <path
+                d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+              ></path>
+            </svg>
+          </button>
+          <button
+            id="nav-toggle"
+            class="flex flex-col gap-[3px]"
+            aria-label="Toggle menu"
+          >
+            <span class="w-6 h-[2px] bg-slate-900 dark:bg-white"></span>
+            <span class="w-6 h-[2px] bg-slate-900 dark:bg-white"></span>
+            <span class="w-6 h-[2px] bg-slate-900 dark:bg-white"></span>
+          </button>
+        </div>
+      </nav>
+
+      <!-- Mobile menu -->
+      <div
+        id="nav-menu"
+        class="absolute top-full left-0 w-full bg-white dark:bg-slate-800 shadow-lg transform -translate-y-full opacity-0 transition-all duration-300 ease-in-out"
+      >
+        <div class="px-6 py-4">
+          <ul class="flex flex-col gap-4 text-sm font-semibold">
+            <li>
+              <a
+                href="#services"
+                id="mobile-nav-services"
+                class="mobile-nav-link block py-2 hover:text-indigo-600 dark:hover:text-indigo-400"
+                >Services</a
+              >
+            </li>
+            <li>
+              <a
+                href="#portfolio"
+                id="mobile-nav-portfolio"
+                class="mobile-nav-link block py-2 hover:text-indigo-600 dark:hover:text-indigo-400"
+                >Portfolio</a
+              >
+            </li>
+            <li>
+              <a
+                href="#testimonials"
+                id="mobile-nav-testimonials"
+                class="mobile-nav-link block py-2 hover:text-indigo-600 dark:hover:text-indigo-400"
+                >Testimonials</a
+              >
+            </li>
+            <li>
+              <a
+                href="#contact"
+                id="mobile-nav-contact"
+                class="mobile-nav-link block py-2 hover:text-indigo-600 dark:hover:text-indigo-400"
+                >Contact</a
+              >
+            </li>
+          </ul>
         </div>
       </div>
-    </div>
-  </section>
+    </header>
 
-<!---ABOUT CEO SECTION----->
-  <section class="py-16 sm:py-24 bg-gradient-to-br from-blue-50 to-white dark:from-slate-900 dark:to-slate-800">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6">
-      <h2 class="text-3xl sm:text-4xl font-bold mb-10 text-slate-900 dark:text-white text-center">About Our CEO</h2>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div class="bg-white dark:bg-slate-700 rounded-lg p-6 shadow-lg border border-blue-100 dark:border-slate-600">
-          <img src="assets/images/eric1.jpg" alt="CEO John Smith" class="w-full h-48 object-cover rounded-lg mb-4">
-          <h3 class="text-xl font-bold mb-2 text-slate-900 dark:text-white">Mr. Eric</h3>
-          <p class="text-slate-700 dark:text-slate-200">Over 20 years in the printing industry, leading innovation and quality.</p>
-        </div>
-        <div class="bg-white dark:bg-slate-700 rounded-lg p-6 shadow-lg border border-blue-100 dark:border-slate-600">
-          <img src="assets/images/portfolio-img2.jpg" alt="CEO receiving award" class="w-full h-48 object-cover rounded-lg mb-4">
-          <h3 class="text-xl font-bold mb-2 text-slate-900 dark:text-white">Industry Excellence Award</h3>
-          <p class="text-slate-700 dark:text-slate-200">Recognized for outstanding leadership and contributions to printing technology.</p>
-        </div>
-        <div class="bg-white dark:bg-slate-700 rounded-lg p-6 shadow-lg border border-blue-100 dark:border-slate-600">
-          <img src="assets/images/teamwork.jpg" alt="CEO with team" class="w-full h-48 object-cover rounded-lg mb-4">
-          <h3 class="text-xl font-bold mb-2 text-slate-900 dark:text-white">Team Leadership</h3>
-          <p class="text-slate-700 dark:text-slate-200">Fostered a culture of quality and customer focus at PressCraft and Logistics.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========== PORTFOLIO ========== -->
-  <section id="portfolio" class="py-16 sm:py-24 dark:bg-slate-900">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6">
-      <h2 class="text-2xl sm:text-3xl font-bold text-center mb-10 sm:mb-14">Recent Work</h2>
-      <div class="grid gap-4 sm:gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
-        <img src="assets/images/brochure-design.jpg" class="rounded-lg shadow-md hover:shadow-lg transition w-full h-48 sm:h-64 object-cover" alt="Business card set">
-        <img src="assets/images/banner.jpg" class="rounded-lg shadow-md hover:shadow-lg transition w-full h-48 sm:h-64 object-cover" alt="Tri‑fold brochure">
-        <img src="assets/images/mugs.jpg" class="rounded-lg shadow-md hover:shadow-lg transition w-full h-48 sm:h-64 object-cover" alt="Poster mock‑up">
-        <img src="assets/images/key fobs.jpg" class="rounded-lg shadow-md hover:shadow-lg transition w-full h-48 sm:h-64 object-cover" alt="Flyer spread">
-        <img src="assets/images/flyer.jpg" class="rounded-lg shadow-md hover:shadow-lg transition w-full h-48 sm:h-64 object-cover" alt="Event banner">
-        <img src="assets/images/T-shirt.png" class="rounded-lg shadow-md hover:shadow-lg transition w-full h-48 sm:h-64 object-cover" alt="Printed T‑shirt">
-      </div>
-    </div>
-  </section>
-
-  <!-- ========== TESTIMONIALS ========== -->
-  <section id="testimonials" class="bg-indigo-600 dark:bg-indigo-900 py-16 sm:py-24 text-white">
-    <div class="max-w-3xl mx-auto px-4 sm:px-6 text-center">
-      <h2 class="text-2xl sm:text-3xl font-bold mb-8 sm:mb-12">What Clients Say</h2>
-
-      <div class="space-y-10 sm:space-y-14">
-        <blockquote>
-          <p class="text-lg sm:text-xl font-medium leading-relaxed">
-            "Their turnaround time is insane and the quality is unbeatable.
-            Our marketing materials finally match our brand."
+    <!-- ========== HERO ========== -->
+    <section class="relative isolate">
+      <div class="hero-background absolute inset-0"></div>
+      <div
+        class="absolute inset-0 bg-gradient-to-l from-white/90 via-white/50 md:via-transparent"
+      ></div>
+      <div class="relative mx-auto max-w-7xl grid md:grid-cols-2">
+        <!-- copy -->
+        <div class="px-6 py-16 sm:py-24 md:py-32">
+          <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight">
+            <span class="block text-white">High‑Quality</span>
+            <span class="block text-indigo-600">Printing Services</span>
+          </h1>
+          <p class="mt-4 sm:mt-6 text-base sm:text-lg text-white max-w-md">
+            Bringing your ideas to life with precision and quality—on paper,
+            fabric, and beyond.
           </p>
-          <footer class="mt-4 text-sm">— Alex M., Creative Director</footer>
-        </blockquote>
+        </div>
+        <!-- Spacer div to maintain grid layout -->
+        <div class="h-64 sm:h-72 md:h-auto"></div>
+      </div>
+    </section>
 
-        <blockquote>
-          <p class="text-lg sm:text-xl font-medium leading-relaxed">
-            "From business cards to banners, PrintCo handles everything for us.
-            Reliable, friendly, and affordable."
+    <!-- ========== SERVICES ========== -->
+    <section
+      id="services"
+      class="py-16 sm:py-24 bg-gradient-to-br from-blue-50 to-white dark:from-slate-900 dark:to-slate-800"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6">
+        <h2
+          class="text-3xl sm:text-4xl font-bold mb-10 text-slate-900 dark:text-white text-center"
+        >
+          Our Printing Services
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+          <!-- Service Cards -->
+          <div class="space-y-6">
+            <div
+              class="bg-blue-100 dark:bg-slate-700 rounded-lg p-6 border border-blue-200 dark:border-slate-600"
+            >
+              <h3 class="font-bold text-lg mb-1 dark:text-white">
+                Digital Printing
+              </h3>
+              <p class="text-slate-700 dark:text-slate-200">
+                High-quality, short-run prints with quick turnaround times,
+                perfect for customized projects and small batches.
+              </p>
+            </div>
+            <div
+              class="bg-blue-100 dark:bg-slate-700 rounded-lg p-6 border border-blue-200 dark:border-slate-600"
+            >
+              <h3 class="font-bold text-lg mb-1 dark:text-white">
+                Offset Printing
+              </h3>
+              <p class="text-slate-700 dark:text-slate-200">
+                Cost-effective solution for large volumes, ensuring precise
+                color accuracy and consistent quality throughout.
+              </p>
+            </div>
+            <div
+              class="bg-blue-100 dark:bg-slate-700 rounded-lg p-6 border border-blue-200 dark:border-slate-600"
+            >
+              <h3 class="font-bold text-lg mb-1 dark:text-white">
+                Large Format Printing
+              </h3>
+              <p class="text-slate-700 dark:text-slate-200">
+                Banners, posters, and signage up to 64" wide, suitable for
+                indoor and outdoor use with durable materials.
+              </p>
+            </div>
+            <div
+              class="bg-blue-100 dark:bg-slate-700 rounded-lg p-6 border border-blue-200 dark:border-slate-600"
+            >
+              <h3 class="font-bold text-lg mb-1 dark:text-white">
+                Specialty Printing
+              </h3>
+              <p class="text-slate-700 dark:text-slate-200">
+                Custom paper stocks, foil stamping, embossing, and other premium
+                finishes for standout designs.
+              </p>
+            </div>
+          </div>
+          <!-- Slideshow -->
+          <div class="w-full flex justify-center">
+            <div
+              class="rounded-lg overflow-hidden shadow-lg w-full h-[500px] md:h-[600px] max-w-xl bg-slate-200 flex items-center justify-center"
+            >
+              <img
+                id="services-slideshow"
+                src="assets/images/slideshow/Logo2.png"
+                alt="Printing Service"
+                class="object-cover w-full h-full transition-opacity duration-700"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!---ABOUT CEO SECTION----->
+    <section
+      class="py-16 sm:py-24 bg-gradient-to-br from-blue-50 to-white dark:from-slate-900 dark:to-slate-800"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6">
+        <h2
+          class="text-3xl sm:text-4xl font-bold mb-10 text-slate-900 dark:text-white text-center"
+        >
+          About Our CEO
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div
+            class="bg-white dark:bg-slate-700 rounded-lg p-6 shadow-lg border border-blue-100 dark:border-slate-600"
+          >
+            <img
+              src="assets/images/eric1.jpg"
+              alt="CEO John Smith"
+              class="w-full h-48 object-cover rounded-lg mb-4"
+            />
+            <h3 class="text-xl font-bold mb-2 text-slate-900 dark:text-white">
+              Mr. Eric
+            </h3>
+            <p class="text-slate-700 dark:text-slate-200">
+              Over 20 years in the printing industry, leading innovation and
+              quality.
+            </p>
+          </div>
+          <div
+            class="bg-white dark:bg-slate-700 rounded-lg p-6 shadow-lg border border-blue-100 dark:border-slate-600"
+          >
+            <img
+              src="assets/images/portfolio-img2.jpg"
+              alt="CEO receiving award"
+              class="w-full h-48 object-cover rounded-lg mb-4"
+            />
+            <h3 class="text-xl font-bold mb-2 text-slate-900 dark:text-white">
+              Industry Excellence Award
+            </h3>
+            <p class="text-slate-700 dark:text-slate-200">
+              Recognized for outstanding leadership and contributions to
+              printing technology.
+            </p>
+          </div>
+          <div
+            class="bg-white dark:bg-slate-700 rounded-lg p-6 shadow-lg border border-blue-100 dark:border-slate-600"
+          >
+            <img
+              src="assets/images/teamwork.jpg"
+              alt="CEO with team"
+              class="w-full h-48 object-cover rounded-lg mb-4"
+            />
+            <h3 class="text-xl font-bold mb-2 text-slate-900 dark:text-white">
+              Team Leadership
+            </h3>
+            <p class="text-slate-700 dark:text-slate-200">
+              Fostered a culture of quality and customer focus at PressCraft and
+              Logistics.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== PORTFOLIO ========== -->
+    <section id="portfolio" class="py-16 sm:py-24 dark:bg-slate-900">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6">
+        <h2 class="text-2xl sm:text-3xl font-bold text-center mb-10 sm:mb-14">
+          Recent Work
+        </h2>
+        <div
+          class="grid gap-4 sm:gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3"
+        >
+          <img
+            src="assets/images/brochure-design.jpg"
+            class="rounded-lg shadow-md hover:shadow-lg transition w-full h-48 sm:h-64 object-cover"
+            alt="Business card set"
+          />
+          <img
+            src="assets/images/banner.jpg"
+            class="rounded-lg shadow-md hover:shadow-lg transition w-full h-48 sm:h-64 object-cover"
+            alt="Tri‑fold brochure"
+          />
+          <img
+            src="assets/images/mugs.jpg"
+            class="rounded-lg shadow-md hover:shadow-lg transition w-full h-48 sm:h-64 object-cover"
+            alt="Poster mock‑up"
+          />
+          <img
+            src="assets/images/key fobs.jpg"
+            class="rounded-lg shadow-md hover:shadow-lg transition w-full h-48 sm:h-64 object-cover"
+            alt="Flyer spread"
+          />
+          <img
+            src="assets/images/flyer.jpg"
+            class="rounded-lg shadow-md hover:shadow-lg transition w-full h-48 sm:h-64 object-cover"
+            alt="Event banner"
+          />
+          <img
+            src="assets/images/T-shirt.png"
+            class="rounded-lg shadow-md hover:shadow-lg transition w-full h-48 sm:h-64 object-cover"
+            alt="Printed T‑shirt"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== TESTIMONIALS ========== -->
+    <section
+      id="testimonials"
+      class="bg-indigo-600 dark:bg-indigo-900 py-16 sm:py-24 text-white"
+    >
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 text-center">
+        <h2 class="text-2xl sm:text-3xl font-bold mb-8 sm:mb-12">
+          What Clients Say
+        </h2>
+
+        <div class="space-y-10 sm:space-y-14">
+          <blockquote>
+            <p class="text-lg sm:text-xl font-medium leading-relaxed">
+              "Their turnaround time is insane and the quality is unbeatable.
+              Our marketing materials finally match our brand."
+            </p>
+            <footer class="mt-4 text-sm">— Alex M., Creative Director</footer>
+          </blockquote>
+
+          <blockquote>
+            <p class="text-lg sm:text-xl font-medium leading-relaxed">
+              "From business cards to banners, PrintCo handles everything for
+              us. Reliable, friendly, and affordable."
+            </p>
+            <footer class="mt-4 text-sm">— Sandra K., Startup Founder</footer>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== CONTACT ========== -->
+    <section id="contact" class="py-16 sm:py-24 bg-slate-50 dark:bg-slate-900">
+      <div
+        class="max-w-5xl mx-auto px-4 sm:px-6 grid lg:grid-cols-2 gap-8 sm:gap-12"
+      >
+        <div>
+          <h2
+            class="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6 dark:text-white"
+          >
+            Get in Touch
+          </h2>
+          <p class="mb-6 text-slate-600 dark:text-slate-300">
+            Have a custom project or a question? Reach out and our team will
+            respond within one business day.
           </p>
-          <footer class="mt-4 text-sm">— Sandra K., Startup Founder</footer>
-        </blockquote>
-      </div>
-    </div>
-  </section>
+          <ul class="space-y-4 text-slate-700 dark:text-slate-300">
+            <li>
+              <strong>Phone:</strong>
+              <a
+                href="tel:+1234567890"
+                class="hover:text-indigo-600 dark:hover:text-indigo-400"
+                >+1 234 567 890</a
+              >
+            </li>
+            <li>
+              <strong>Email:</strong>
+              <a
+                href="mailto:hello@printco.com"
+                class="hover:text-indigo-600 dark:hover:text-indigo-400"
+                >hello@printco.com</a
+              >
+            </li>
+            <li>
+              <strong>Address:</strong> 123 Print Street, Suite 100, City,
+              Country
+            </li>
+          </ul>
 
-  <!-- ========== CONTACT ========== -->
-  <section id="contact" class="py-16 sm:py-24 bg-slate-50 dark:bg-slate-900">
-    <div class="max-w-5xl mx-auto px-4 sm:px-6 grid lg:grid-cols-2 gap-8 sm:gap-12">
-      <div>
-        <h2 class="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6 dark:text-white">Get in Touch</h2>
-        <p class="mb-6 text-slate-600 dark:text-slate-300">
-          Have a custom project or a question? Reach out and our team will respond within one business day.
+          <!-- Google map iframe (static) -->
+          <div class="mt-6 sm:mt-8 rounded overflow-hidden shadow">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3970.242157015071!2d-0.019326!3d5.6780942!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfdf81d7c84743eb%3A0xe6ba38652b9644c8!2sPress%20craft%20trading%20and%20logistics!5e0!3m2!1sen!2sgh!4v1748625778641!5m2!1sen!2sgh"
+              width="500"
+              height="300"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            >
+            </iframe>
+          </div>
+        </div>
+
+        <!-- Contact form -->
+        <form class="space-y-4 sm:space-y-6">
+          <div>
+            <label class="block text-sm font-medium mb-1 dark:text-white"
+              >Name</label
+            >
+            <input
+              type="text"
+              class="w-full rounded border-slate-300 dark:border-slate-600 dark:bg-slate-700 dark:text-white focus:ring-indigo-500 py-2.5"
+            />
+          </div>
+          <div>
+            <label class="block text-sm font-medium mb-1 dark:text-white"
+              >Email</label
+            >
+            <input
+              type="email"
+              class="w-full rounded border-slate-300 dark:border-slate-600 dark:bg-slate-700 dark:text-white focus:ring-indigo-500 py-2.5"
+            />
+          </div>
+          <div>
+            <label class="block text-sm font-medium mb-1 dark:text-white"
+              >Message</label
+            >
+            <textarea
+              rows="4"
+              class="w-full rounded border-slate-300 dark:border-slate-600 dark:bg-slate-700 dark:text-white focus:ring-indigo-500"
+            ></textarea>
+          </div>
+          <button
+            type="submit"
+            class="w-full sm:w-auto rounded-md bg-indigo-600 px-6 py-3 text-white font-semibold shadow hover:bg-indigo-700"
+          >
+            Send Message
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="bg-slate-800 text-slate-200 py-8">
+      <div
+        class="max-w-7xl mx-auto px-4 sm:px-6 flex flex-col md:flex-row justify-between items-center gap-4 sm:gap-6"
+      >
+        <p>
+          &copy; <span id="year"></span> Presscraft & Logistics. All rights
+          reserved.
         </p>
-        <ul class="space-y-4 text-slate-700 dark:text-slate-300">
-          <li><strong>Phone:</strong> <a href="tel:+1234567890" class="hover:text-indigo-600 dark:hover:text-indigo-400">+1 234 567 890</a></li>
-          <li><strong>Email:</strong> <a href="mailto:hello@printco.com" class="hover:text-indigo-600 dark:hover:text-indigo-400">hello@printco.com</a></li>
-          <li><strong>Address:</strong> 123 Print Street, Suite 100, City, Country</li>
-        </ul>
-
-        <!-- Google map iframe (static) -->
-        <div class="mt-6 sm:mt-8 rounded overflow-hidden shadow">
-          <iframe 
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3970.242157015071!2d-0.019326!3d5.6780942!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfdf81d7c84743eb%3A0xe6ba38652b9644c8!2sPress%20craft%20trading%20and%20logistics!5e0!3m2!1sen!2sgh!4v1748625778641!5m2!1sen!2sgh" 
-          width="500" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-          </iframe>
+        <div class="flex gap-4 sm:gap-6 text-sm">
+          <a href="#" class="hover:text-white">Privacy Policy</a>
+          <a href="#" class="hover:text-white">Terms</a>
         </div>
       </div>
+    </footer>
 
-      <!-- Contact form -->
-      <form class="space-y-4 sm:space-y-6">
-        <div>
-          <label class="block text-sm font-medium mb-1 dark:text-white">Name</label>
-          <input type="text" class="w-full rounded border-slate-300 dark:border-slate-600 dark:bg-slate-700 dark:text-white focus:ring-indigo-500 py-2.5" />
-        </div>
-        <div>
-          <label class="block text-sm font-medium mb-1 dark:text-white">Email</label>
-          <input type="email" class="w-full rounded border-slate-300 dark:border-slate-600 dark:bg-slate-700 dark:text-white focus:ring-indigo-500 py-2.5" />
-        </div>
-        <div>
-          <label class="block text-sm font-medium mb-1 dark:text-white">Message</label>
-          <textarea rows="4" class="w-full rounded border-slate-300 dark:border-slate-600 dark:bg-slate-700 dark:text-white focus:ring-indigo-500"></textarea>
-        </div>
-        <button type="submit" class="w-full sm:w-auto rounded-md bg-indigo-600 px-6 py-3 text-white font-semibold shadow hover:bg-indigo-700">
-          Send Message
-        </button>
-      </form>
-    </div>
-  </section>
-
-  <!-- ========== FOOTER ========== -->
-  <footer class="bg-slate-800 text-slate-200 py-8">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 flex flex-col md:flex-row justify-between items-center gap-4 sm:gap-6">
-      <p>&copy; <span id="year"></span> Presscraft & Logistics. All rights reserved.</p>
-      <div class="flex gap-4 sm:gap-6 text-sm">
-        <a href="#" class="hover:text-white">Privacy Policy</a>
-        <a href="#" class="hover:text-white">Terms</a>
-      </div>
-    </div>
-  </footer>
-</body>
+    <!-- Tempo Error Handling -->
+    <script src="https://api.tempo.new/proxy-asset?url=https://storage.googleapis.com/tempo-public-assets/error-handling.js"></script>
+  </body>
 </html>
