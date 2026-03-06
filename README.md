@@ -11,7 +11,7 @@ This is a single-page website featuring:
 - Portfolio gallery
 - Testimonials section
 - Contact form
-- Mobile-first design
+- Mobile-friendly design
 
 ## 🛠️ Tech Stack
 
